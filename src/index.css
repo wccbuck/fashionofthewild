@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "HyliaSerifBeta";
+  src: url("/fonts/HyliaSerifBeta-Regular.woff") format("woff"),
+    url("/fonts/HyliaSerifBeta-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-zelda: "HyliaSerifBeta", serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* Parchment / off-white for light mode */
+  background: #f1e9d2;
+  color: #2a2418;
+}
+
+.dark body {
+  /* Darker slate/charcoal for night mode */
+  background: hsl(210, 14%, 11%);
+  color: #e2e4ea;
+}
+
+.title-glow {
+  text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.8);
+}
