@@ -6,6 +6,8 @@ preview updates as you choose. The full outfit is encoded into the URL hash so y
 share any look as a link, and you can also save a jpg by clicking the "Save This Outfit" button.
 A Tears of the Kingdom tab is stubbed out for later, after I get all the screenshots I need.
 
+www.fashionofthewild.com
+
 This is a React rewrite of the original FashionOfTheWild web app, which was written in 2017 using Java/Vaadin.
 
 ## Stack
