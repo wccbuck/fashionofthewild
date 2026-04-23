@@ -42,7 +42,12 @@ export function BotWApp({ isActive }: { isActive: boolean }) {
   const handleDownload = async () => {
     if (!previewRef.current) return;
     const { toPng } = await import("html-to-image");
-    const dataUrl = await toPng(previewRef.current, { pixelRatio: 2 });
+    const dataUrl = await toPng(previewRef.current, {
+      pixelRatio: 2,
+      width: 422,
+      height: 690,
+      style: { transform: "scale(1)", transformOrigin: "top left" },
+    });
     const a = document.createElement("a");
     a.href = dataUrl;
     a.download = "fashion-of-the-wild.png";
@@ -51,7 +56,7 @@ export function BotWApp({ isActive }: { isActive: boolean }) {
 
   return (
     <div className="flex flex-col lg:flex-row-reverse gap-6 p-4 lg:p-6 max-w-[1400px] mx-auto">
-      <div className="flex-shrink-0 flex flex-col items-center gap-3">
+      <div className="w-full lg:w-[422px] flex-shrink-0 flex flex-col items-center gap-3">
         <OutfitPreview ref={previewRef} layers={layers} labels={details} />
 
         <div className="flex gap-2 flex-wrap justify-center">
